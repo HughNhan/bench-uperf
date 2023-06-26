@@ -15,21 +15,19 @@
     "requirements": [
 	    {
 	        "name": "uperf_src",
-	        "type": "source",
-	        "source_info": {
-		        "url": "https://github.com/uperf/uperf/archive/1.0.7.tar.gz",
-		        "filename": "1.0.7.tar.gz",
-		        "commands": { 
-		            "unpack": "tar -xzf 1.0.7.tar.gz",
-		            "get_dir": "tar -tzf 1.0.7.tar.gz | head -n 1",
-		            "commands": [
-			            "CFLAGS=\"-ggdb\" ./configure --disable-sctp",
-			            "make",
-			            "make install",
-			            "ldconfig",
-			            "/usr/local/bin/uperf -V"
-		            ]
-                }
+	        "type": "manual",
+	        "manual_info": {
+		        "commands": [
+		           "git clone https://github.com/HughNhan/uperf.git /root/uperf",
+		            "cd /root/uperf; git checkout double-free",
+			        "cd /root/uperf; touch less_c_static",
+			        "cd /root/uperf; autoreconf --install",
+			        "cd /root/uperf; CFLAGS=\"-ggdb -DDEBUG -rdynamic\" ./configure --disable-sctp",
+			        "cd /root/uperf; make",
+			        "cd /root/uperf; make install",
+			        "cd /root/uperf; ldconfig",
+			        "/usr/local/bin/uperf -V"
+		        ]
 	        }
         }
     ]

@@ -3,6 +3,7 @@
   <group nthreads="$nthreads">
     <transaction iterations="1">
       <flowop type="connect" options="remotehost=$remotehost protocol=$protocol port=$port"/>
+      <flowop type="think" options="duration=$think"/>
     </transaction>
     <transaction duration="$duration">
       <flowop type="write" options="count=256 size=$wsize"/>

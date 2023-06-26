@@ -12,7 +12,7 @@
         "test-types": {
             "description": "all possible test-types",
             "args": [ "test-type" ],
-            "vals": "^stream$|^crr$|^rr$|^ping-pong$"
+            "vals": "^stream$|^crr$|^rr$|^ping-pong$|nop$"
         },
         "protocols": {
             "description": "all possible protocols",

@@ -24,6 +24,7 @@ cpu_pin=""
 
 longopts="test-type:,protocol:,rsize:,wsize:,nthreads:,remotehost:,duration:,cpu-pin:,think:"
 opts=$(getopt -q -o "" --longoptions "$longopts" -n "getopt.sh" -- "$@");
+echo opts=$opts
 if [ $? -ne 0 ]; then
     exit_error "Unrecognized option specified"
 fi
